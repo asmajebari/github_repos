@@ -2,8 +2,7 @@ import Repo from "../components/Repo";
 import useOctokit from "../hooks/useOctokit";
 
 const Profile = () => {
-  const {repos} = useOctokit()
-   
+  const {repos, user} = useOctokit()
     return (
         <div>
           {repos.map((repo) => (

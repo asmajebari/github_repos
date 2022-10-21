@@ -1,15 +1,13 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import './App.css';
 import Landing from './pages/Landing';
 import Profile from './pages/Profile';
-import { Endpoints } from "@octokit/types";
-type listUserReposResponse = Endpoints["GET /users/{username}/repos"]["response"]["data"];
+import Header from './components/Header';
 
 function App() {
-
   return (
     <Router>
-    <div className="App">
+      <div className="font-roboto">
+        <Header />
         <Routes>
           <Route path='/'
             element={<Landing />}
@@ -24,5 +22,5 @@ function App() {
 }
 
 export default App;
-export type { listUserReposResponse };
+
 

@@ -1,4 +1,3 @@
-import {listUserReposResponse} from '../App'
 type Props = {
     repo: {
         id: number | undefined,
