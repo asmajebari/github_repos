@@ -6,7 +6,7 @@ import Header from './components/Header';
 function App() {
   return (
     <Router>
-      <div className="font-roboto">
+      <div className="font-roboto bg-gradient-to-bl from-gray-700 to-gray-900">
         <Header />
         <Routes>
           <Route path='/'

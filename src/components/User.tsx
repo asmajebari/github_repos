@@ -15,7 +15,7 @@ type Props = {
 
 const User = ({ user }: Props) => {
   return (
-      <div className="flex flex-col w-3/12 text-gray-700">
+      <div className="flex flex-col w-3/12 text-gray-700 mt-4">
           <img src={user.avatar_url} alt="avatar" className="w-fit h-fit border-2 rounded-full justify-self-center mb-4"/>
           <p className="font-semibold text-xl">{user.name}</p>
           <p className="text-lg text-gray-500">{user.login}</p>
