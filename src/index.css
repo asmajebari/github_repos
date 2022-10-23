@@ -2,17 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+	background: url('../public/Gotham.png') no-repeat center center fixed;
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
 @layer components {
   .dropdown-button {
-    @apply border-2 rounded px-4 hover:bg-gray-100 hover:border-gray-300 flex flex-row items-center space-x-1;
+    @apply text-gray-200 border-2 rounded border-gray-400 px-4 hover:bg-gray-700 flex flex-row items-center space-x-1;
   }
 
   .button {
-    @apply px-2 py-1 mb-2 hover:bg-gray-100 hover:rounded hover:px-2 hover:py-1 flex flex-row items-center space-x-1 cursor-pointer;
+    @apply text-gray-200 px-2 py-1 mb-2 hover:bg-gray-700 hover:rounded hover:px-2 hover:py-1 flex flex-row items-center space-x-1 cursor-pointer;
   }
 
   .pagination-button{
-    @apply bg-gray-200 px-2 py-1 rounded hover:bg-gray-100;
+    @apply bg-gray-200 px-2 py-1 rounded hover:bg-gray-100 disabled:bg-gray-400;
   }
+
 }

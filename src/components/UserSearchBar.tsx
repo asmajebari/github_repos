@@ -2,9 +2,10 @@ import { useState } from 'react'
 import { useNavigate } from "react-router-dom"
 type Props = {
   className: string,
+  buttonClass?:string
   showButton: boolean
 }
-const UserSearchBar = ({ className, showButton } : Props ) => {
+const UserSearchBar = ({ className, showButton, buttonClass } : Props ) => {
     const navigate = useNavigate();
     const [username, setUsername] = useState('')
     const onSubmit = (e:any) => {
@@ -20,7 +21,7 @@ const UserSearchBar = ({ className, showButton } : Props ) => {
         setUsername(e.target.value)
       }}
       />
-      {showButton && <button>Search</button>}
+      {showButton && <button type="submit" className={buttonClass}>Search</button>}
       
   </form>
   )

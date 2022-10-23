@@ -2,12 +2,14 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Landing from './pages/Landing';
 import Profile from './pages/Profile';
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <Router>
-      <div className="font-roboto bg-gradient-to-bl from-gray-700 to-gray-900">
-        <Header />
+      <div className='flex flex-col min-h-screen'>
+      <Header />
+      <div className="font-roboto flex-grow ">
         <Routes>
           <Route path='/'
             element={<Landing />}
@@ -16,7 +18,9 @@ function App() {
             element={<Profile />}
           ></Route>
      </Routes>
-   </div>
+      </div>
+        <Footer />
+        </div>
    </Router>
   );
 }

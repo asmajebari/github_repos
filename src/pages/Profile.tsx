@@ -7,18 +7,25 @@ import { RiGitRepositoryLine } from "react-icons/ri";
 import { AiOutlineProject } from "react-icons/ai";
 import Pagination from "../components/Pagination";
 import { useEffect, useState } from "react";
+
 const Profile = () => {
   const queryParams = new URLSearchParams(window.location.search)
-  const [query, setQuery] = useState<string>(queryParams.get("q")!);
+ 
+  const [query, setQuery] = useState<{ q: string, page: string }>({ q: '', page:''});
   useEffect(() => {
-    setQuery(queryParams.get("q")!)
-   
-  })
-  const { repos, user, searchedRepos } = useOctokit({ query: query })
+    let queryObj = {q:queryParams.get("q")!, page: queryParams.get("page")!}
+    setQuery(queryObj)   
+    
+  }, [queryParams.get("q"), queryParams.get("page")])
+  const { repos, user, searchedRepos } = useOctokit(query)
   
   return (
-    <div className="mx-auto w-4/5 mt-20 divide-y-2">
-      <div className="w-6/12 mx-auto flex flex-row space-x-2">
+  
+    <div className="mx-auto w-4/5 mt-16 divide-y-2 divide-gray-500">
+    <div className=" w-full flex md:flex-row lg:flex-row flex-col space-x-6 ">
+       <User user={user!} />
+        <div className="mt-5 divide-y-2 divide-gray-500 md:w-full" >
+        <div className="flex flex-row md:space-x-2 md:text-base space-x-1 text-sm">
         <button disabled type="button" className="button">
         <FiBookOpen />
           <p>Overview</p>  
@@ -27,7 +34,7 @@ const Profile = () => {
         <button type="button" className="button font-bold">
           <RiGitRepositoryLine />
             <p >Repositories</p>
-            <div className="bg-gray-200 text-sm px-2 rounded-xl">{user.public_repos}</div>
+            <div className="bg-gray-500 text-sm px-2 rounded-xl">{user.public_repos}</div>
           </button>
             </div>
         <button disabled type="button" className="button"><AiOutlineProject />
@@ -35,24 +42,23 @@ const Profile = () => {
         <button disabled type="button" className="button"><FiPackage />
           <p>Packages</p> </button>
       </div>
-    
-    <div className="w-full flex flex-row space-x-6 ">
-       <User user={user!} />
-       <div className="mt-5 divide-y-2 w-full" >
         <RepoSearchBar />
-        <div className="divide-y-2 w-full">
+        <div className="divide-y-2 divide-gray-500 w-full">
             {searchedRepos.length > 0 ?
               (searchedRepos.map((repo) => (
                 <Repo key={repo.id} repo={repo} />
               ))) :
-              (repos.map((repo) => (
+              (query.q ? (
+                <p className="text-2xl font-bold text-center my-14 text-white">{user.login} doesn't have repositories that match</p>
+              ) :
+                repos.map((repo) => (
                 <Repo key={repo.id} repo={repo} />
-              )))
-            }
+                ))
               
-            <div className=" justify-center flex flex-row pt-5 mb-10">
-            <Pagination />
-            </div>
+              )
+            }
+             
+            
           </div>
           
       </div>

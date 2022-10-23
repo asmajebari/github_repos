@@ -16,8 +16,8 @@ const RepoSearchBar = () => {
     }
 
     return (
-        <div >
-            <form onSubmit={onSubmit} className="flex flex-row space-x-2 mb-4">
+        <div className='py-6'>
+            <form onSubmit={onSubmit} className="flex flex-col md:space-y-0 space-y-4 md:flex-row md:space-x-2 mb-4 ">
                 <input type="text"
                     className="rounded border-2 placeholder-gray-400 px-3 py-1 w-4/5"
                     placeholder="Find a repository..."

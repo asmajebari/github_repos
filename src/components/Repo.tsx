@@ -31,8 +31,8 @@ const Repo = ({ repo }: Props) => {
       <div className="flex flex-row justify-between py-4">
           <div className='space-y-1'>
               <a target="_blank" href={repo.html_url} className="text-lg text-blue-600 font-semibold">{repo.name}</a>
-              {repo.description && <p className=" text-gray-700 pb-2">{repo.description}</p>}
-              <div className="flex flex-row space-x-4 text-sm text-gray-700">
+              {repo.description && <p className=" text-gray-400 pb-2">{repo.description}</p>}
+              <div className="flex flex-row space-x-4 text-sm text-gray-400">
                   {repo.language && <p>{repo.language}</p>}
                   {repo.forks_count && <div className='flex flex-row items-center space-x-0.5'>
                       <IoIosGitNetwork />
@@ -47,7 +47,7 @@ const Repo = ({ repo }: Props) => {
               </div>
           </div>
           <div>
-              <button className='text-sm rounded-md border-2 px-3 py-1 flex flex-row items-center space-x-1 transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:text-indigo-500'>
+              <button className='text-gray-400 text-sm rounded-md border-gray-400 border-2 px-3 py-1 flex flex-row items-center space-x-1 transition hover:scale-110 hover:shadow-xl hover:text-gray-300 hover:border-gray-300 focus:outline-none focus:ring active:text-indigo-500'>
               <IoStarOutline />
                   <p>
                       Star
