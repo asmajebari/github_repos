@@ -7,7 +7,8 @@ const Footer = () => {
 
         <div className="flex -mx-6">
           <a
-            href="#"
+            href="https://github.com/asmajebari/github_repos"
+            target='_blank'
             className="mx-3 hover:opacity-80 duration-150 flex flex-row space-x-2 items-center"
           >
             <BsGithub />
