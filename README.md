@@ -6,7 +6,7 @@ The project is a GitHub profile page clone. It displays a user's list of reposit
 
 
 ## How to run the project
-After cloning the project, run:
+After cloning the project, create a GitHub personal access token and add it to an .env file (https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token). Then, run:
 
 ### `npm install` to install all dependencies
 
