@@ -17,6 +17,8 @@ After cloning the project, create a GitHub personal access token and add it to a
 You can then go to `localhost:3000` where you will find the landing page.
 You can then go ahead and search for a user's repositories by typing their username (not the full name), or by going to `localhost:3000/{username}/repos`.
 
+Once in the profile page, you can search for a specific repository by name, and then you can clear the filter.
+
 
 ## Future improvements
 
