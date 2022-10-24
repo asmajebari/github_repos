@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import Landing from './pages/Landing';
 import Profile from './pages/Profile';
 import Header from './components/Header';
@@ -16,7 +16,7 @@ function App() {
           ></Route>
           <Route path='/:username/repos'
             element={<Profile />}
-          ></Route>
+            ></Route>
      </Routes>
       </div>
         <Footer />
