@@ -2,7 +2,9 @@
 
 ## Description
 
-The project is a GitHub profile page clone. It displays a user's list of repositories and allows to search for repositories by name.
+The project is a GitHub profile page clone. It displays a user's list of repositories and allows to search for repositories by name. 
+
+You can checkout the project here: https://radiant-cendol-9d9adb.netlify.app/
 
 
 ## How to run the project
